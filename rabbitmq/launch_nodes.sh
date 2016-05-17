@@ -3,8 +3,8 @@
 set -e
 
 NODES=${1:-1}
-COOKIE=${2:-cookie}
-MASTER=${3:-rabbit}
+MASTER=${2:-rabbit}
+COOKIE=${3:-cookie}
 
 for i in $(seq $NODES)
 do
