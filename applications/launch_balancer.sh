@@ -1,5 +1,5 @@
 PORT=${PORT:-8080}
-HOSTNAME=${HOSTNAME:-haproxy}
+HOST=${HOST:-haproxy}
 SERVERS=""
 LINKS=""
 
@@ -9,5 +9,5 @@ do
     SERVERS="$SERVERS $s"
 done
 
-docker run -d --name ${HOSTNAME} ${LINKS} -e SERVERS="$SERVERS" -h ${HOSTNAME} -p $PORT:80 gangtetris/haproxy:1.6
+docker run -d --name ${HOST} ${LINKS} -e SERVERS="$SERVERS" -h ${HOST} -p $PORT:80 gangtetris/haproxy:1.6
 
