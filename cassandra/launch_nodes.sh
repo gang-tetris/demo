@@ -5,7 +5,7 @@ set -e
 NODES=${1:-1}
 MASTER=${2:-cassandra}
 
-until docker exec "${MASTER}" cqlsh -e quit
+until docker exec "${MASTER}" cqlsh -e quit>/dev/null
 do
     sleep 1
 done
