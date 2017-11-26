@@ -1,8 +1,8 @@
+NODE_NUMBER=${1:-}
 MASTER=${2:-hazelcast}
-NODE_NAME=""
 
-[[ ! -z "$1" ]] && NODE_NAME="--name $1"
-
-docker run -d ${NODE_NAME} --link ${MASTER}:${MASTER} \
-           gangtetris/hazelcast:3.6
+docker run -d \
+    --name hazelcast$NODE_NUMBER -h hazelcast$NODE_NUMBER \
+    --link ${MASTER}:${MASTER} \
+    gangtetris/hazelcast:3.6
 
